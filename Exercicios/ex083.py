@@ -17,3 +17,4 @@ if len(lista) == 0:
     print('Expressao correta.')
 else:
     print('Expressao errada.')
+print(f'Lista da expressão: ')
