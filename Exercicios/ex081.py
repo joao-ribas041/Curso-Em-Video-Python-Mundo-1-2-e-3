@@ -7,7 +7,7 @@ numeros = []
 
 while True:
     numeros.append(int(input('Digite um valor: ')))
-    opc = str(input('Quer Continuar? [S/N] '))
+    opc = str(input('Deseja continuar? [S/N] '))
     if opc in 'Nn':
         break
 print('-'*15)
