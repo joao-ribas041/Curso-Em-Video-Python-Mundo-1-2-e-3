@@ -5,7 +5,6 @@
 
 matriz = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 soma = [0, 0, 0]
-soma_pares = 0
 
 for i in range(3):
     for j in range(3):
@@ -28,4 +27,4 @@ for lista in matriz:
 
 print(f'A soma dos valores pares: {soma[0]}')
 print(f'A soma dos valores da terceira coluna: {soma[1]}')
-print(f'O maior valor da terceira linha: {max(matriz[1], key=int)}')
+print(f'O maior valor da segunda linha: {max(matriz[1], key=int)}')
