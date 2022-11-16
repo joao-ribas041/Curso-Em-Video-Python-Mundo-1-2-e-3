@@ -19,11 +19,13 @@ for i in range(3):
     print()
 
 for lista in matriz:
+    if lista[2]:
+        soma[1] = soma[1] + lista[2]
     for valor in lista:
         if valor % 2 == 0:
             soma[0] = soma[0] + valor
-        if matriz[0][2]:
-            soma[1] = soma[1] + valor
+
 
 print(f'A soma dos valores pares: {soma[0]}')
 print(f'A soma dos valores da terceira coluna: {soma[1]}')
+print(f'O maior valor da terceira linha: {max(matriz[1], key=int)}')
