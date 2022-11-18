@@ -4,17 +4,19 @@
 
 from random import randint
 from time import sleep
-jogadores = []
+from operator import itemgetter
+jogo = {}
 
 for i in range(1, 5):
-    jogador = {'nome': 'Jogador' + str(i), 'jogada': randint(1, 6)}
-    print(f'O {jogador["nome"]} tirou {jogador["jogada"]}')
-    jogadores.append(jogador.copy())
-    sleep(1)
+    jogo['jogador' + str(i)] = randint(1, 6)
 
-jogadores = sorted(jogadores, key=lambda i: i['jogada'], reverse=True)
+for k, v in jogo.items():
+    print(f'o {k} tirou {v}.')
+    sleep(0.5)
 
-print('Ranking dos jogadores (Maior - Menor):')
-for i, jogador in enumerate(jogadores, 1):
-    print(f'{i}o. lugar - {jogador["nome"]} com {jogador["jogada"]}.')
-    sleep(1)
+rank_jogo = sorted(jogo.items(), key=itemgetter(1), reverse=True)
+
+print('\nRanking dos jogadores (Maior - Menor):')
+for i, rank in enumerate(rank_jogo, 1):
+    print(f'{i}o. lugar - {rank[0]} com {rank[1]}.')
+    sleep(0.5)
