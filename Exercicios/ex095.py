@@ -38,10 +38,16 @@ for i, j in enumerate(jogadores):
     print(
         f'{i:^3} {j["nome"]:<8} {j["partidas"]:<8} {j["gols-por-partida"]} {j["gols-totais"]:>7}')
 print('-'*40)
-
+print(f'len: {len(jogadores)}')
 while True:
-    consulta = int(input('Deseja mostrar dados de qual jogador? '))
-    if 0 > consulta > len(jogadores):
-        print(f'Não existe o codigo {consulta}.')
+    consulta = int(input('Deseja mostrar dados de qual jogador? \n'))
+    if consulta == 999:
+        break
+    elif consulta > len(jogadores) - 1 or consulta < 0:
+        print(f'Não existe o codigo {consulta}.\n')
     else:
         print(f'-- Levantamento do jogador {jogadores[consulta]["nome"]}')
+        for i, gol in enumerate(jogadores[consulta]['gols-por-partida']):
+            print(
+                f'  No jogo {i}, {jogadores[consulta]["nome"]} fez {gol} gols.')
+print('Finalizado.')
