@@ -12,16 +12,26 @@ idade_total = media = total_pessoas = 0
 
 while True:
     pessoa['nome'] = str(input('Digite o nome: ')).capitalize()
-    pessoa['sexo'] = str(
-        input(f'Qual é o genero de {pessoa["nome"]}? [M/F] ')).upper()
+    while True:
+        pessoa['sexo'] = str(
+            input(f'Qual é o genero de {pessoa["nome"]}? [M/F] ')).upper()
+        if pessoa['sexo'] in 'MF':
+            break
+        print(f'Erro, Digite um sexo valido para {pessoa["nome"]}')
+
     pessoa['idade'] = int(input(f'Qual é a idade de {pessoa["nome"]}? '))
     idade_total += pessoa['idade']
     grupo.append(pessoa.copy())
     pessoa.clear()
 
-    resp = str(input('Deseja continuar? [S/N] '))
+    while True:
+        resp = str(input('Deseja continuar? [S/N] ')).upper()
+        if resp in 'SN':
+            break
+        print('Digite S ou N para continuar.')
     print()
     if resp in 'Nn':
+
         break
 
 total_pessoas = len(grupo)
@@ -29,7 +39,7 @@ media = idade_total / total_pessoas
 
 print('-'*30)
 print(f'Foram cadastrado {total_pessoas} pessoas na lista.')
-print(f'A idade média do grupo é de {media} anos.')
+print(f'A idade média do grupo é de {media:5.2f} anos.')
 print('-'*30)
 
 print('Lista de mulheres no grupo: ', end='')
