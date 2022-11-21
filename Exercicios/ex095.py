@@ -6,6 +6,7 @@ gols = []
 maior_participacao = 0
 
 while True:
+    jogador.clear()
     gols_totais = 0
     jogador['nome'] = str(input('Digite o nome do jogador: ')).capitalize()
     jogador['partidas'] = int(
@@ -23,20 +24,24 @@ while True:
     jogador['gols-totais'] = gols_totais
     gols.clear()
     jogadores.append(jogador.copy())
-    jogador.clear()
 
     continua = str(input('Deseja continuar? [S/N] ')).upper()
     print()
     if continua in 'Nn':
         break
 
-print(maior_participacao)
-print('-'*40)
-print(f'{"cod":^3} {"nome":<8} {"Partidas":<8} {"gols"} {"Total":>7}')
-print('-'*40)
-for i, j in enumerate(jogadores):
-    print(
-        f'{i:^3} {j["nome"]:<8} {j["partidas"]:<8} {j["gols-por-partida"]} {j["gols-totais"]:>7}')
+# print(maior_participacao)
+print('-'*50)
+print(f'{"cod":^3}')
+for k in jogador.keys():
+    print(f'{k:<20}', end='')
+print()
+print('-'*50)
+for k, v in enumerate(jogadores):
+    print(f'{k:^3} ', end='')
+    for p in v.values():
+        print(f'{str(p):<20}', end='')
+    print()
 print('-'*40)
 print(f'len: {len(jogadores)}')
 while True:
