@@ -10,12 +10,14 @@ linha = '~'*40
 
 
 def contador(inicio, fim, passo):
+    if passo < 0:
+        passo *= -1
+    if passo == 0:
+        passo = 1
+    print(passo)
     print(linha)
     print(f'Contagem de {inicio} até {fim} de {passo} em {passo}')
     sleep(0.5)
-
-    if passo <= 0:
-        passo = 1
 
     if fim > inicio:
         fim += 1
@@ -23,8 +25,7 @@ def contador(inicio, fim, passo):
             print(i, end=' ')
         print()
 
-    # elif inicio > fim:
-    else:
+    elif inicio > fim:
         fim -= 1
         passo *= -1
         for i in range(inicio, fim, passo):
