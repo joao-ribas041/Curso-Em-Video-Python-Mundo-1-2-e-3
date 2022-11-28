@@ -11,7 +11,7 @@ def voto(nasc):
         return f'Com {idade} anos: NÃO VOTA'
     elif 16 <= idade < 18 or idade >= 65:
         return f'Com {idade} anos: VOTO OPCIONAL'
-    elif idade >= 18:
+    else:
         return f'Com {idade} anos: VOTO OBRIGATÓRIO'
 
 
