@@ -37,6 +37,10 @@ def ajuda(func):
     print(cores('fecha'))
 
 
-msg('Ajuda em Python', 'azul')
-busca = str(input('Função ou biblioteca: '))
-ajuda(busca)
+while True:
+    msg('Ajuda em Python', 'azul')
+    busca = str(input('Função ou biblioteca, [999] finaliza: '))
+    if busca in '999':
+        break
+    else:
+        ajuda(busca)
