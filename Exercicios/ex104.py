@@ -3,18 +3,20 @@
 # Ex:
 # n = leiaInt('Digite um n')
 
-def leiaInt(str):
+def leiaInt(txt):
+    verificado = False
+    valor = 0
     while True:
-        resultado = input(str)
-        msg = 'Erro, por favor digite um numero inteiro valido'
+        resultado = str(input(txt))
 
-        if resultado in '':
-            print(msg)
+        if resultado.isnumeric():
+            valor = int(resultado)
+            verificado = True
         else:
-            if resultado not in '1234567890':
-                print(msg)
-            else:
-                return int(resultado)
+            print('Erro, por favor digite um numero inteiro valido')
+        if verificado == True:
+            break
+    return valor
 
 
 n = leiaInt('Digite um número: ')
