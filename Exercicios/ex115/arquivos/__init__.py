@@ -24,7 +24,8 @@ def listarCadastros():
         with open('Pessoas.txt', 'r') as arquivo:
             for pessoa in arquivo:
                 print(pessoa)
-    except:
+    except Exception as erro:
         print(linha())
         print(f'{"Sem pessoas cadastrada na lista.":^{len(linha())}}')
+        print(f'Erro: {erro.__class__}')
         print(linha())
